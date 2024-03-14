@@ -3,20 +3,21 @@ import {
   Box,
   Card,
   CardContent,
+  Grid,
   ThemeProvider,
   Typography,
   createTheme,
 } from "@mui/material";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import HealthBenifitArrowImage from "../features/image/HealthBenifitArrowImage.jpg";
-import HealthBenififGroupImage from "../features/image/HealthBenififGroupImage.jpg";
-import HealthBenifitvitaminImage from "../features/image/HealthBenifitvitaminImage.jpg";
-import HeathBeniftshealthcareImage from "../features/image/HeathBeniftshealthcareImage.jpg";
+import HealthBenifitArrowImage from "../features/image/HealthBenifitArrowImage.png";
+import HealthBenififGroupImage from "../features/image/HealthBenififGroupImage.png";
+import HealthBenifitvitaminImage from "../features/image/HealthBenifitvitaminImage.png";
+import HeathBeniftshealthcareImage from "../features/image/HeathBeniftshealthcareImage.png";
 
-import HealthBeniftAromaImage from "../features/image/HealthBeniftAromaImage.jpg";
-import HealthBenifitAgeGroupImage from "../features/image/HealthBenifitAgeGroupImage.jpg";
-import HealthBenifitsLeavesImage from "../features/image/HealthBenifitsLeavesImage.jpg";
-import HealthBinifitLeafImage from "../features/image/HealthBinifitLeafImage.jpg";
+import HealthBeniftAromaImage from "../features/image/HealthBeniftAromaImage.png";
+import HealthBenifitAgeGroupImage from "../features/image/HealthBenifitAgeGroupImage.png";
+import HealthBenifitsLeavesImage from "../features/image/HealthBenifitsLeavesImage.png";
+import HealthBinifitLeafImage from "../features/image/HealthBinifitLeafImage.png";
 const theme = createTheme();
 
 theme.typography.h3 = {
@@ -31,39 +32,39 @@ theme.typography.h3 = {
 };
 const items = [
   {
-    name: "Karupatti",
-    price: "Starts from ₹139",
+    name: "Low glycemic",
+    price: "Healthy substitute",
     image: HealthBenifitArrowImage,
   },
   {
-    name: "Rice",
-    price: "Starts from ₹99",
+    name: "High load of minerals",
+    price: "Fe, Ca, Mg, B-complex, B12",
     image: HealthBenififGroupImage,
   },
   {
-    name: "Cold pressed oil",
-    price: "Starts from ₹129",
+    name: "Source of vitamin B12",
+    price: "Enriched vitamin B12",
     image: HealthBenifitvitaminImage,
   },
   {
-    name: "Health mix",
-    price: "Starts from ₹135",
+    name: "Medicinal properties",
+    price: "Healthy substitute",
     image: HeathBeniftshealthcareImage,
   },
 
   {
-    name: "Karupatti",
-    price: "Starts from ₹139",
+    name: "Has great taste & aroma",
+    price: "chocolate & caramel flavour",
     image: HealthBeniftAromaImage,
   },
   {
-    name: "Rice",
-    price: "Starts from ₹99",
+    name: "Consumed by all age groups",
+    price: "Good for children",
     image: HealthBenifitAgeGroupImage,
   },
   {
-    name: "Cold pressed oil",
-    price: "Starts from ₹129",
+    name: "Eco-friendly",
+    price: "sustainable source of sweetner",
     image: HealthBenifitsLeavesImage,
   },
   {
@@ -76,68 +77,85 @@ const items = [
 function HealthBenefits() {
   return (
     <Box>
-      <ThemeProvider theme={theme}>
-        <Typography variant="h3">Health benefits</Typography>
-      </ThemeProvider>
-      <Box
-        sx={{
-          display: "flex",
-          // justifyContent: "center",
-          marginBottom: "2rem",
-          flexWrap: "wrap",
-        }}
-      >
+      <Grid item lg={12} md={8} sm={6} xs={4} xl={4}>
+        <ThemeProvider theme={theme}>
+          <Typography variant="h3">Health benefits</Typography>
+        </ThemeProvider>
         <Box
-          sx={{
-            width: "100%",
-            borderRadius: "10px",
-            // display: "grid",
-            width: "fit-content",
-            gap: "20px",
-            display: "flex",
-            flexWrap: "wrap",
-          }}
+          sx={
+            {
+              // display: "flex",
+              // justifyContent: "center",
+              // marginBottom: "2rem",
+              // flexWrap: "wrap",
+            }
+          }
         >
-          {items.map((item, index) => (
-            <Card
-              key={index}
-              variant="outlined"
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                borderRadius: "16px",
-                height: "70px",
-                width: "240px",
-                padding: "6px",
-                border: `1px solid ${item.borderColor}`,
-              }}
-            >
-              <Box>
-                <img src={item.image} alt={item.name} width={42} height={42} />
-              </Box>
-              <Box sx={{ display: "flex", gap: "26px" }}>
-                <Box>
-                  <CardContent>
-                    <Typography level="title-md" sx={{ fontWeight: "bold" }}>
-                      {item.name}
-                    </Typography>
-                    <Typography>{item.price}</Typography>
-                  </CardContent>
+          <Box
+            sx={{
+              // width: "100%",
+              // borderRadius: "07p",
+              // display: "grid",
+              // width: "fit-content",
+              gap: "25px",
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {items.map((item, index) => (
+              <Card
+                key={index}
+                variant="outlined"
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  // gap: "8px",
+                  alignItems: "center",
+                  borderRadius: "16px",
+                  height: "70px",
+                  width: "271px",
+                  paddingX: "4px",
+                  border: `1px solid ${item.borderColor}`,
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ paddingLeft: "8px" }}>
+                    <img src={item.image} alt={item.name} width={35} />
+                  </Box>
+                  <Box>
+                    <Box>
+                      <CardContent
+                        display="flex"
+                        flexWrap="wrap"
+                        // sx={{ paddingBottom: "0px" }}
+                        fontSize="12px"
+                      >
+                        <Typography
+                          level="title-md"
+                          sx={{ fontWeight: "bold", fontSize: "14px" }}
+                        >
+                          {item.name}
+                        </Typography>
+                        <Typography sx={{ fontSize: "13px" }}>
+                          {item.price}
+                        </Typography>
+                      </CardContent>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {item.icon}
+                    </Box>
+                  </Box>
                 </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  {item.icon}
-                </Box>
-              </Box>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </Grid>
     </Box>
   );
 }

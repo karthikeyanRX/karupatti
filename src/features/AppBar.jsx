@@ -12,8 +12,8 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
-import { ButtonBase, FormControl, Select } from "@mui/material";
-import karupattiNavImage from "../features/image/karupattiNavImage.jpg";
+import { ButtonBase, FormControl, Grid, Select } from "@mui/material";
+import karupattiNavImage from "../features/image/karupattiNavImage.png";
 import { useState } from "react";
 const pages = ["Home", "Karupatti", "Rice", "Cold pressed oil", "Health mix"];
 
@@ -43,6 +43,7 @@ function ResponsiveAppBar() {
   };
 
   return (
+    // <Grid item lg={12} md={8} sm={6} xs={1} xl={12}>
     <AppBar
       position="static"
       sx={{
@@ -50,13 +51,16 @@ function ResponsiveAppBar() {
         color: "black",
         borderRadius: "10px",
         fontFamily: "sans-serif",
+        marginTop: "20px",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar>
           <Box
             sx={{
-              mr: 2,
+              // mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
@@ -72,7 +76,7 @@ function ResponsiveAppBar() {
               width={"100px"}
             />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -162,11 +166,23 @@ function ResponsiveAppBar() {
                   </Select>
                 </Box>
               </Box>
-              <Box>
-                <SearchRoundedIcon onClick={handleOpenUserMenu} />
-                <FavoriteBorderRoundedIcon onClick={handleOpenUserMenu} />
-                <ShoppingCartOutlinedIcon onClick={handleOpenUserMenu} />
-                <PersonOutlineRoundedIcon onClick={handleOpenUserMenu} />
+              <Box sx={{ gap: "11px", display: "flex" }}>
+                <SearchRoundedIcon
+                  // onClick={handleOpenUserMenu}
+                  color="#30363C"
+                />
+                <FavoriteBorderRoundedIcon
+                  // onClick={handleOpenUserMenu}
+                  color="#30363C"
+                />
+                <ShoppingCartOutlinedIcon
+                  // onClick={handleOpenUserMenu}
+                  color="#30363C"
+                />
+                <PersonOutlineRoundedIcon
+                  // onClick={handleOpenUserMenu}
+                  color="#30363C"
+                />
               </Box>
             </Box>
 
@@ -191,6 +207,7 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    // </Grid>
   );
 }
 export default ResponsiveAppBar;

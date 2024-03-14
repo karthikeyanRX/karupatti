@@ -17,19 +17,19 @@ const MainPage = () => {
   console.log(checkValue, "checkValue");
   return (
     <Box>
-      <Grid item lg={4} md={4} sm={6} xs={12} xl={4}>
-        <Aside />
-        <Appbar />
-        <CategoryCards setCheckValue={setCheckValue} />
-        <LoopingCard checkValue={checkValue} />
-        <HealthBenefits />
-        <NaturalOilStoreLoop />
-        <AboutsUs />
-        <BelowStoreLoop />
-        <ColdPressedOilLoop />
-        <SuggestedProductsLoop />
-        <Footer />
-      </Grid>
+      {/* <Grid item lg={4} md={4} sm={6} xs={12} xl={4}> */}
+      {/* <Aside />
+      <Appbar /> */}
+      <CategoryCards setCheckValue={setCheckValue} />
+      <LoopingCard checkValue={checkValue} />
+      <HealthBenefits />
+      <NaturalOilStoreLoop />
+      <AboutsUs />
+      <BelowStoreLoop />
+      <ColdPressedOilLoop />
+      <SuggestedProductsLoop />
+      <Footer />
+      {/* </Grid> */}
     </Box>
   );
 };

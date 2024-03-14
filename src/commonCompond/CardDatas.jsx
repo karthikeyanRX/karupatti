@@ -1,22 +1,22 @@
-import karupattiLargeImage from "../features/image/karupattiLargeImage.jpg";
-import DiscountNewImage from "../features/image/DiscountNewImage.jpg";
-import LeafImage from "../features/image/LeafImage.jpg";
-import RateingKarupatti from "../features/image/RateingKarupatti.jpg";
-import LikeHeart from "../features/image/LikeHeart.jpg";
-import coconutoilLarge from "../features/image/coconutoilLarge.jpg";
-import healthmixLarge from "../features/image/healthmixLarge.jpg";
-import riceWoodLarge from "../features/image/riceWoodLarge.jpg";
-import DiscountRice from "../features/image/DiscountRice.jpg";
-import DiscountOil from "../features/image/DiscountOil.jpg";
-import groungnutoilNaturalpage from "../features/image/groungnutoilNaturalpage.jpg";
-import gingellyoilNatiral from "../features/image/gingellyoilNatiral.jpg";
-import rawRiceStoreLarge from "../features/image/rawRiceStoreLarge.jpg";
-import coldPressedGroundnutOIlNatural from "../features/image/coldPressedGroundnutOIlNatural.jpg";
+import karupattiCardImage from "../features/image/karupattiCardImage.png";
+import DiscountNewImage from "../features/image/DiscountNewImage.png";
+import LeafImage from "../features/image/LeafImage.png";
+import RateingKarupatti from "../features/image/RateingKarupatti.png";
+import LikeHeart from "../features/image/LikeHeart.png";
+import coconutoilLarge from "../features/image/coconutoilLarge.png";
+import healthmixLarge from "../features/image/healthmixLarge.png";
+import riceWoodLarge from "../features/image/riceWoodLarge.png";
+import DiscountRice from "../features/image/DiscountRice.png";
+import DiscountOil from "../features/image/DiscountOil.png";
+import groungnutoilNaturalpage from "../features/image/groungnutoilNaturalpage.png";
+import gingellyoilNatiral from "../features/image/gingellyoilNatiral.png";
+import rawRiceStoreLarge from "../features/image/rawRiceStoreLarge.png";
+// import coldPressedGroundnutOIlNatural from "../features/image/coldPressedGroundnutOIlNatural.jpg";
 export const cardDatas = [
   {
     DiscountNewImage: DiscountNewImage,
     LeafImage: LeafImage,
-    karupattiLargeImage: karupattiLargeImage,
+    karupattiLargeImage: karupattiCardImage,
     RateingKarupatti: RateingKarupatti,
     Rating: "200 ratings",
     Hearts: LikeHeart,
@@ -96,7 +96,7 @@ export const naturalOilDatas = [
   {
     DiscountNewImage: DiscountNewImage,
     LeafImage: LeafImage,
-    karupattiLargeImage: coldPressedGroundnutOIlNatural,
+    karupattiLargeImage: groungnutoilNaturalpage,
     RateingKarupatti: RateingKarupatti,
     Rating: "3 ratings",
     Hearts: LikeHeart,
@@ -132,7 +132,7 @@ export const belowStoreDatas = [
   {
     DiscountNewImage: DiscountNewImage,
     LeafImage: LeafImage,
-    karupattiLargeImage: karupattiLargeImage,
+    karupattiLargeImage: karupattiCardImage,
     RateingKarupatti: RateingKarupatti,
     Hearts: LikeHeart,
     Rating: "9 ratings",
@@ -143,7 +143,7 @@ export const belowStoreDatas = [
   {
     DiscountNewImage: DiscountOil,
     LeafImage: LeafImage,
-    karupattiLargeImage: coldPressedGroundnutOIlNatural,
+    karupattiLargeImage: groungnutoilNaturalpage,
     RateingKarupatti: RateingKarupatti,
     Rating: "3 ratings",
     Hearts: LikeHeart,
@@ -179,7 +179,7 @@ export const coldPressedOillDatas = [
   {
     DiscountNewImage: DiscountOil,
     LeafImage: LeafImage,
-    karupattiLargeImage: coldPressedGroundnutOIlNatural,
+    karupattiLargeImage: groungnutoilNaturalpage,
     RateingKarupatti: RateingKarupatti,
     Hearts: LikeHeart,
     Rating: "9 ratings",
@@ -212,7 +212,7 @@ export const coldPressedOillDatas = [
   {
     DiscountNewImage: DiscountNewImage,
     LeafImage: LeafImage,
-    karupattiLargeImage: coldPressedGroundnutOIlNatural,
+    karupattiLargeImage: groungnutoilNaturalpage,
     RateingKarupatti: RateingKarupatti,
     Rating: "3 ratings",
     Hearts: LikeHeart,
@@ -248,7 +248,7 @@ export const SuggestedProductsData = [
   {
     DiscountNewImage: DiscountNewImage,
     LeafImage: LeafImage,
-    karupattiLargeImage: karupattiLargeImage,
+    karupattiLargeImage: karupattiCardImage,
     RateingKarupatti: RateingKarupatti,
     Hearts: LikeHeart,
     Rating: "9 ratings",
@@ -259,7 +259,7 @@ export const SuggestedProductsData = [
   {
     DiscountNewImage: DiscountOil,
     LeafImage: LeafImage,
-    karupattiLargeImage: coldPressedGroundnutOIlNatural,
+    karupattiLargeImage: groungnutoilNaturalpage,
     RateingKarupatti: RateingKarupatti,
     Rating: "3 ratings",
     Hearts: LikeHeart,

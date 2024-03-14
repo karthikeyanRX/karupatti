@@ -1,9 +1,12 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: aliceblue;
+  /* background-image: radial-gradient(circle at center, #2c9763 10%, #2c9763 0%); */
+  background-color: rgb(234, 241, 234);
 }
 
 /* code {

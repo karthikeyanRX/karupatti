@@ -1,6 +1,6 @@
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import React from "react";
-import karupattiNavImage from "../features/image/karupattiNavImage.jpg";
+import karupattiNavImage from "../features/image/karupattiNavImage.png";
 import logoFooter from "../features/image/logoFooter.jpg";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
@@ -38,7 +38,14 @@ const Footer = () => {
         <Box>
           <img src={karupattiNavImage} alt={karupattiNavImage} width={"75%"} />
         </Box>
-        <Box sx={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "8px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
           {footerData.map((item) => (
             <Button key={item}>
               <p style={{ color: "white" }}>{item}</p>
@@ -57,7 +64,13 @@ const Footer = () => {
       </Box>
       <Box>
         <Box
-          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "26px",
+            rowGap: "0px",
+          }}
         >
           {footerAboutData.map((item) => (
             <Button key={item}>
@@ -72,39 +85,26 @@ const Footer = () => {
           display: "flex",
           background: "white",
           justifyContent: "space-around",
-          gap: "8rem",
+          gap: "22rem",
           alignItems: "center",
           flexWrap: "wrap",
+          rowGap: "10px",
         }}
       >
         <Box>
-          <img src={logoFooter} alt={logoFooter} />
+          <img src={logoFooter} alt={logoFooter} width={280} />
         </Box>
 
         <Box>
           <Typography
             sx={{
               color: "#6C7882",
+              textAlign: "center",
             }}
           >
             Copyright © 2024 Fintrix. All rights reserved
           </Typography>
         </Box>
-        {/* <Box>
-          <img src={karupattiNavImage} alt={karupattiNavImage} />
-        </Box>
-        <Box>
-          <img src={karupattiNavImage} alt={karupattiNavImage} />
-        </Box>
-        <Box>
-          <img src={karupattiNavImage} alt={karupattiNavImage} />
-        </Box>
-        <Box>
-          <img src={karupattiNavImage} alt={karupattiNavImage} />
-        </Box>
-        <Box>
-          <img src={karupattiNavImage} alt={karupattiNavImage} />
-        </Box> */}
       </Box>
     </Box>
   );

@@ -61,22 +61,6 @@ export default function LoopingCard(props) {
             );
           })}
         </Box>
-        {/* <Box
-          sx={{
-            display: "flex",
-            gap: "29px",
-            flexWrap: "wrap",
-          }}
-        >
-          {filteredCards.map((item) => {
-            console.log(item, "item");
-            return (
-              <Box key={item.id}>
-                <BestSellerCards card={item} />
-              </Box>
-            );
-          })}
-        </Box> */}
       </Box>
     </div>
   );

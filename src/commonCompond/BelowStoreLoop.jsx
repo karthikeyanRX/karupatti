@@ -7,7 +7,7 @@ const BelowStoreLoop = () => {
   const theme = createTheme();
   theme.typography.h3 = {
     // marginLeft: "13rem",
-    fontFamily: "'Poppins', sans-serif",
+    // fontFamily: "'Poppins', sans-serif",
     fontWeight: "600px",
     fontSize: "28px",
     VerticalTrim: "Cap height",
