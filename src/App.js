@@ -9,15 +9,7 @@ import MainPage from "./MainPage";
 
 function App() {
   return (
-    <Box
-      sx={{
-        padding: " 0px 220px",
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "nowrap",
-        cursor: "pointer",
-      }}
-    >
+    <Box>
       <MainPage />
     </Box>
   );

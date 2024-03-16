@@ -13,11 +13,11 @@ import Karupattimini from "../features/image/Karupattimini.png";
 import Rice1 from "../features/image/Rice1.png";
 import coconutoilmini from "../features/image/coconutoilmini.png";
 import healthmixmini from "../features/image/healthmixmini.png";
+import { responsiveProperty } from "@mui/material/styles/cssUtils";
 
 const theme = createTheme();
 
 theme.typography.h3 = {
-  // marginLeft: "13rem",
   fontFamily: "'Poppins', sans-serif",
   fontWeight: "600px",
   fontSize: "28px",
@@ -65,20 +65,58 @@ function CategoryCards(props) {
     setSelectedItem(item.name === selectedItem ? null : item.name);
     props.setCheckValue(item.name);
   };
-
+  const cardContainerStyle = {
+    flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 10px)" },
+    // superLargeDesktop: {
+    //   breakpoint: { max: 4000, min: 3000 },
+    //   items: 5,
+    // },
+    // desktop: {
+    //   breakpoint: { max: 3000, min: 1024 },
+    //   items: 4,
+    // },
+    // tablet: {
+    //   breakpoint: { max: 1024, min: 464 },
+    //   items: 2,
+    // },
+    // mobile: {
+    //   breakpoint: { max: 464, min: 0 },
+    //   items: 1,
+    // },
+  };
+  // const cardContainerStyle = {
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   mt: 8,
+  //   // width: { md: "calc(100% - 1px)" },
+  // };
+  const ResponsiveAppBarPadding = {
+    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
+    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
+  };
   return (
-    <Box>
+    // <Grid container justifyContent="center" mt={5}>
+    //   <Grid item xs={9} md={8} lg={10} xl={12} sm={9.5}>
+    <Box
+      sx={ResponsiveAppBarPadding}
+      // sx={{
+      //   display: "flex",
+      //   justifyContent: "center",
+      //   flexDirection: "column",
+      //   alignItems: "center",
+      // }}
+    >
       <ThemeProvider theme={theme}>
         <Typography variant="h3">Shop by category</Typography>
       </ThemeProvider>
-      <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+      <Box sx={cardContainerStyle}>
         <Box
           sx={{
             borderRadius: "10px",
-            gap: "37px",
+            // justifyContent: "center",
+            gap: "20px",
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: " space-between",
           }}
         >
           {items.map((item, index) => (
@@ -90,8 +128,8 @@ function CategoryCards(props) {
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
-                height: "70px",
-                width: "260px",
+                height: "65px",
+                width: "269px",
                 borderRadius: "16px",
                 paddingRight: "10px",
                 paddingBottom: "5px",
@@ -139,6 +177,8 @@ function CategoryCards(props) {
         </Box>
       </Box>
     </Box>
+    //   </Grid>
+    // </Grid>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import karupattiNavImage from "../features/image/karupattiNavImage.png";
 import logoFooter from "../features/image/logoFooter.jpg";
@@ -24,7 +24,9 @@ const Footer = () => {
     "Disclaimer",
   ];
   return (
-    <Box sx={{ background: "#30363C" }}>
+    <Box sx={{ background: "#30363C", width: "100%" }}>
+      {/* <Grid container mt={2}> */}
+      {/* <Grid sx={{ background: "#30363C" }} mt={5}> */}
       <Box
         sx={{
           display: "flex",
@@ -68,7 +70,7 @@ const Footer = () => {
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
-            gap: "26px",
+            gap: "16px",
             rowGap: "0px",
           }}
         >
@@ -79,7 +81,6 @@ const Footer = () => {
           ))}
         </Box>
       </Box>
-
       <Box
         sx={{
           display: "flex",
@@ -106,6 +107,8 @@ const Footer = () => {
           </Typography>
         </Box>
       </Box>
+      {/* </Grid> */}
+      {/* </Grid> */}
     </Box>
   );
 };

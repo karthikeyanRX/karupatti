@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-image: radial-gradient(circle at center, #2c9763 10%, #2c9763 0%); */
   background-color: rgb(234, 241, 234);
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; */
 }
 
 /* code {

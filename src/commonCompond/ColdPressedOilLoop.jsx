@@ -15,8 +15,12 @@ const ColdPressedOilLoop = () => {
     marginBottom: "2rem",
     marginTop: "2rem",
   };
+  const ResponsiveAppBarPadding = {
+    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
+    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
+  };
   return (
-    <Box>
+    <Box sx={ResponsiveAppBarPadding}>
       <Box>
         <ThemeProvider theme={theme}>
           <Typography variant="h3">Cold pressed oil(6)</Typography>
@@ -26,10 +30,11 @@ const ColdPressedOilLoop = () => {
         sx={{
           display: "flex",
           // justifyContent: "center",
-          gap: "29px",
+          gap: "24px",
           flexWrap: "wrap",
           borderBottom: "1px solid gray",
           paddingBottom: "80px",
+          // justifyContent: "center",
         }}
       >
         {coldPressedOillDatas.map((item) => {

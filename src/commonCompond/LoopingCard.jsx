@@ -6,7 +6,13 @@ import {
   coldPressedOillDatas,
   naturalOilDatas,
 } from "./CardDatas";
-import { Box, ThemeProvider, Typography, createTheme } from "@mui/material";
+import {
+  Box,
+  ThemeProvider,
+  Typography,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
 
 export default function LoopingCard(props) {
   console.log(props.checkValue, "props.checkValue");
@@ -37,9 +43,13 @@ export default function LoopingCard(props) {
     }
   }, [props.checkValue]);
 
+  const responsiveCard = {
+    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
+    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
+  };
   return (
     <div>
-      <Box>
+      <Box sx={responsiveCard}>
         <Box>
           <ThemeProvider theme={theme}>
             <Typography variant="h3">Best Sellers</Typography>
@@ -48,8 +58,9 @@ export default function LoopingCard(props) {
         <Box
           sx={{
             display: "flex",
-            gap: "29px",
+            gap: "24px",
             flexWrap: "wrap",
+            // justifyContent: "center",
           }}
         >
           {cardData.map((item) => {

@@ -13,17 +13,19 @@ import LikeHeart from "../features/image/LikeHeart.jpg";
 const BestSellerCards = (props) => {
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <Grid item lg={12} md={8} sm={6} xs={4} xl={4}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <Card
           // variant="solid"
           // color="primary"
-          invertedColors
+
           sx={{
             // height: "337px",
             width: "254px",
@@ -31,6 +33,7 @@ const BestSellerCards = (props) => {
             padding: "12px",
             display: "flex",
             flexDirection: "column",
+
             gap: "20px",
           }}
         >
@@ -138,7 +141,8 @@ const BestSellerCards = (props) => {
             </CardActions>
           </Box>
         </Card>
-      </Grid>
+        {/* </Grid> */}
+      </Box>
     </Box>
   );
 };
