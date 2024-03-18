@@ -47,6 +47,9 @@ export default function LoopingCard(props) {
     ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
     mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
   };
+  const handleShowAnotherComponent = () => {
+    props.setShowAnotherComponent(true);
+  };
   return (
     <div>
       <Box sx={responsiveCard}>
@@ -67,7 +70,10 @@ export default function LoopingCard(props) {
             console.log(item, "item234");
             return (
               <Box key={item.id}>
-                <BestSellerCards card={item} />
+                <BestSellerCards
+                  card={item}
+                  handleShowAnotherComponent={handleShowAnotherComponent}
+                />
               </Box>
             );
           })}

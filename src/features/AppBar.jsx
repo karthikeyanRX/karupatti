@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from "@mui/icons-material/Adb";
+import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -47,39 +47,26 @@ function ResponsiveAppBar() {
   };
   const ResponsiveAppBar = {
     flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 20px)" },
-
-    // xs: false, // true if screen width is >=0px
-    // sm: true, // true if screen width is >=600px
-    // md: true, // true if screen width is >=960px
   };
   const ResponsiveAppBarPadding = {
     ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
     mr: { xs: 4, sm: 12, md: 8, lg: 19, xl: 19 },
-    // xs: false, // true if screen width is >=0px
-    // sm: true, // true if screen width is >=600px
-    // md: true, // true if screen width is >=960px
   };
   return (
-    // <Grid container mt={5} justifyContent={"center"}>
-    //   <Grid item xs={9} md={8} lg={10} xl={10} sm={9.5}>
     <Box sx={ResponsiveAppBarPadding}>
       <AppBar
         position="static"
         sx={{
           backgroundColor: "white",
           width: "100%",
-          // color: "black",
+          color: "black",
           borderRadius: "10px",
-          // marginTop: "20px",
+          marginTop: "20px",
           // display: "flex",
         }}
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={ResponsiveAppBar}>
-            {/* <AdbIcon /> */}
-
-            {/* sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          /> */}
             <Typography
               variant="h6"
               noWrap

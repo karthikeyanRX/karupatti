@@ -15,34 +15,37 @@ import { useState } from "react";
 
 const MainPage = () => {
   const [checkValue, setCheckValue] = useState("");
+  const [showAnotherComponent, setShowAnotherComponent] = useState(false);
+
   console.log(checkValue, "checkValue");
   return (
     <>
-      <Box
-        sx={{
-          // padding: "0px 8rem",
-          // display: "flex",
-          // flexDirection: "column",
-          // alignItems: "center",
-
-          cursor: "pointer",
-        }}
-      >
-        {/* <Grid item lg={4} md={4} sm={6} xs={12} xl={4}> */}
-        {/* <Aside /> */}
-        <Appbar />
-        <CategoryCards setCheckValue={setCheckValue} />
-        <LoopingCard checkValue={checkValue} />
-        <HealthBenefits />
-        <NaturalOilStoreLoop />
-        <AboutsUs />
-        <BelowStoreLoop />
-        <ColdPressedOilLoop />
-        <SuggestedProductsLoop />
-        {/* </Grid> */}
-        {/* <OilView /> */}
-      </Box>
-      <Footer />
+      {!showAnotherComponent ? (
+        <Box>
+          <Box
+            sx={{
+              cursor: "pointer",
+            }}
+          >
+            <Aside />
+            <Appbar />
+            <CategoryCards setCheckValue={setCheckValue} />
+            <LoopingCard
+              checkValue={checkValue}
+              setShowAnotherComponent={setShowAnotherComponent}
+            />
+            <HealthBenefits />
+            <NaturalOilStoreLoop />
+            <AboutsUs />
+            <BelowStoreLoop />
+            <ColdPressedOilLoop />
+            <SuggestedProductsLoop />
+          </Box>
+          <Footer />
+        </Box>
+      ) : (
+        <OilView showAnotherComponent={showAnotherComponent} />
+      )}
     </>
   );
 };
