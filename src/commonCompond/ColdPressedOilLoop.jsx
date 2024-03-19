@@ -30,6 +30,7 @@ const ColdPressedOilLoop = () => {
         mt={5}
         sx={{
           display: "flex",
+          cursor: "pointer",
           // justifyContent: "center",
           gap: "24px",
           flexWrap: "wrap",

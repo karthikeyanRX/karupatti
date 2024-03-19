@@ -63,7 +63,7 @@ export default function LoopingCard(props) {
           display: "flex",
           gap: "24px",
           flexWrap: "wrap",
-          // justifyContent: "center",
+          cursor: "pointer",
         }}
       >
         {cardData.map((item) => {

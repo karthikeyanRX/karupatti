@@ -33,6 +33,7 @@ const NaturalOilStoreLoop = () => {
           // justifyContent: "center",
           gap: "24px",
           flexWrap: "wrap",
+          cursor: "pointer",
           // justifyContent: "cener",t
         }}
       >

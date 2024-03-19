@@ -21,15 +21,17 @@ const MainPage = () => {
   console.log(checkValue, "checkValue");
   return (
     // <>
-    // {!showAnotherComponent ? (
+    //  {!showAnotherComponent ? (
     <>
       <Box>
         <Box
-          sx={{
-            cursor: "pointer",
-          }}
+          sx={
+            {
+              // cursor: "pointer",
+            }
+          }
         >
-          {/* <Aside /> */}
+          <Aside />
           <Appbar />
           <CategoryCards setCheckValue={setCheckValue} />
           <LoopingCard

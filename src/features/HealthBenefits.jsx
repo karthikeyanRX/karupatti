@@ -104,6 +104,7 @@ function HealthBenefits() {
             gap: "20px",
             display: "flex",
             flexWrap: "wrap",
+            cursor: "pointer",
             // justifyContent: "center",
           }}
         >
