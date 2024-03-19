@@ -3,29 +3,38 @@ import {
   Box,
   Card,
   CardContent,
-  Grid,
-  ThemeProvider,
   Typography,
   createTheme,
+  ThemeProviderider,
+
+  // ThemeProvider,
 } from "@mui/material";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Karupattimini from "../features/image/Karupattimini.png";
 import Rice1 from "../features/image/Rice1.png";
 import coconutoilmini from "../features/image/coconutoilmini.png";
 import healthmixmini from "../features/image/healthmixmini.png";
-import { responsiveProperty } from "@mui/material/styles/cssUtils";
+import styled from "@emotion/styled";
+import { theme } from "../commonCompond/theme";
+import { ThemeProvider } from "@emotion/react";
 
-const theme = createTheme();
+const ResponsiveTypography = styled("div")(({ theme }) => ({
+  fontSize: "14px",
+  [theme.breakpoints?.down("sm")]: {
+    fontSize: "13px",
+  },
+}));
+// const theme = createTheme();
 
-theme.typography.h3 = {
-  fontFamily: "'Poppins', sans-serif",
-  fontWeight: "600px",
-  fontSize: "28px",
-  VerticalTrim: "Cap height",
-  lineHeight: "44.07px",
-  marginBottom: "2rem",
-  marginTop: "3rem",
-};
+// theme.typography.h3 = {
+//   fontFamily: "'Poppins', sans-serif",
+//   fontWeight: "600px",
+//   fontSize: "28px",
+//   VerticalTrim: "Cap height",
+//   lineHeight: "44.07px",
+//   marginBottom: "2rem",
+//   marginTop: "3rem",
+// };
 
 const items = [
   {
@@ -65,120 +74,92 @@ function CategoryCards(props) {
     setSelectedItem(item.name === selectedItem ? null : item.name);
     props.setCheckValue(item.name);
   };
+
   const cardContainerStyle = {
     flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 10px)" },
-    // superLargeDesktop: {
-    //   breakpoint: { max: 4000, min: 3000 },
-    //   items: 5,
-    // },
-    // desktop: {
-    //   breakpoint: { max: 3000, min: 1024 },
-    //   items: 4,
-    // },
-    // tablet: {
-    //   breakpoint: { max: 1024, min: 464 },
-    //   items: 2,
-    // },
-    // mobile: {
-    //   breakpoint: { max: 464, min: 0 },
-    //   items: 1,
-    // },
   };
-  // const cardContainerStyle = {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   mt: 8,
-  //   // width: { md: "calc(100% - 1px)" },
-  // };
-  const ResponsiveAppBarPadding = {
-    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
-  };
+
   return (
-    // <Grid container justifyContent="center" mt={5}>
-    //   <Grid item xs={9} md={8} lg={10} xl={12} sm={9.5}>
-    <Box
-      sx={ResponsiveAppBarPadding}
-      // sx={{
-      //   display: "flex",
-      //   justifyContent: "center",
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      // }}
-    >
-      <ThemeProvider theme={theme}>
-        <Typography variant="h3">Shop by category</Typography>
-      </ThemeProvider>
-      <Box sx={cardContainerStyle}>
-        <Box
-          sx={{
-            borderRadius: "10px",
-            // justifyContent: "center",
-            gap: "20px",
-            display: "flex",
-            flexWrap: "wrap",
-          }}
-        >
-          {items.map((item, index) => (
-            <Card
-              key={index}
-              variant="outlined"
-              cursor="pointer"
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                height: "65px",
-                width: "269px",
-                borderRadius: "16px",
-                paddingRight: "10px",
-                paddingBottom: "5px",
-                border: `1px solid ${item.borderColor}`,
-                backgroundColor: "white",
-                cursor: "pointer",
-                backgroundColor:
-                  item.name === selectedItem ? "#F0F0F0" : "inherit",
-              }}
-              onClick={() => handleCardClick(item)}
-            >
-              <Box
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
+          mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
+        }}
+      >
+        <Typography variant="h3" mt={6}>
+          Shop by category
+        </Typography>
+
+        <Box sx={cardContainerStyle}>
+          <Box
+            mt={5}
+            sx={{
+              borderRadius: "10px",
+              gap: "20px",
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {items.map((item, index) => (
+              <Card
+                key={index}
+                variant="outlined"
+                cursor="pointer"
                 sx={{
-                  justifyContent: "center",
+                  display: "flex",
+                  flexWrap: "wrap",
                   alignItems: "center",
+                  height: "65px",
+                  width: "269px",
+                  borderRadius: "16px",
+                  paddingRight: "10px",
+                  paddingBottom: "5px",
+                  border: `1px solid ${item.borderColor}`,
+                  backgroundColor: "white",
+                  cursor: "pointer",
+                  backgroundColor:
+                    item.name === selectedItem ? "#F0F0F0" : "inherit",
                 }}
+                onClick={() => handleCardClick(item)}
               >
-                <img src={item.image} alt={item.name} width={"50px"} />
-              </Box>
-              <Box sx={{ display: "flex", gap: "36px" }}>
-                <Box>
-                  <CardContent fontSize={"12px"}>
-                    <Typography
-                      level="title-md"
-                      sx={{ fontWeight: "bold", fontSize: "14px" }}
-                    >
-                      {item.name}
-                    </Typography>
-                    <Typography sx={{ fontSize: "13px" }}>
-                      {item.price}
-                    </Typography>
-                  </CardContent>
-                </Box>
                 <Box
                   sx={{
-                    display: "flex",
+                    justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
-                  {item.icon}
+                  <img src={item.image} alt={item.name} width={"50px"} />
                 </Box>
-              </Box>
-            </Card>
-          ))}
+                <Box sx={{ display: "flex", gap: "36px" }}>
+                  <Box>
+                    <CardContent fontSize={"12px"}>
+                      <ResponsiveTypography
+                        level="title-md"
+                        sx={{ fontWeight: "bold", fontSize: "14px" }}
+                      >
+                        {item.name}
+                      </ResponsiveTypography>
+                      <ResponsiveTypography sx={{ fontSize: "13px" }}>
+                        {item.price}
+                      </ResponsiveTypography>
+                    </CardContent>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                </Box>
+              </Card>
+            ))}
+          </Box>
         </Box>
       </Box>
-    </Box>
-    //   </Grid>
-    // </Grid>
+    </ThemeProvider>
   );
 }
 

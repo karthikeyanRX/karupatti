@@ -12,6 +12,7 @@ import { Box, Grid } from "@mui/material";
 import Aside from "./features/Aside";
 import OilView from "./ProductView/OilView";
 import { useState } from "react";
+import OilviewLooping from "./commonCompond/OilviewLooping";
 
 const MainPage = () => {
   const [checkValue, setCheckValue] = useState("");
@@ -19,33 +20,38 @@ const MainPage = () => {
 
   console.log(checkValue, "checkValue");
   return (
+    // <>
+    // {!showAnotherComponent ? (
     <>
-      {!showAnotherComponent ? (
-        <Box>
-          <Box
-            sx={{
-              cursor: "pointer",
-            }}
-          >
-            <Aside />
-            <Appbar />
-            <CategoryCards setCheckValue={setCheckValue} />
-            <LoopingCard
-              checkValue={checkValue}
-              setShowAnotherComponent={setShowAnotherComponent}
-            />
-            <HealthBenefits />
-            <NaturalOilStoreLoop />
-            <AboutsUs />
-            <BelowStoreLoop />
-            <ColdPressedOilLoop />
-            <SuggestedProductsLoop />
-          </Box>
-          <Footer />
+      <Box>
+        <Box
+          sx={{
+            cursor: "pointer",
+          }}
+        >
+          {/* <Aside /> */}
+          <Appbar />
+          <CategoryCards setCheckValue={setCheckValue} />
+          <LoopingCard
+            checkValue={checkValue}
+            setShowAnotherComponent={setShowAnotherComponent}
+          />
+          <HealthBenefits />
+          <NaturalOilStoreLoop />
+          <AboutsUs />
+          <BelowStoreLoop />
+          <ColdPressedOilLoop />
+          <SuggestedProductsLoop />
         </Box>
-      ) : (
-        <OilView showAnotherComponent={showAnotherComponent} />
-      )}
+        <Footer />
+      </Box>
+      {/* // ) : ( */}
+      {/* //   <OilviewLooping showAnotherComponent={showAnotherComponent} /> */}
+      {/* // )} */}
+
+      {/* // </> */}
+
+      {/* <OilviewLooping /> */}
     </>
   );
 };

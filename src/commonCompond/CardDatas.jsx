@@ -54,8 +54,8 @@ export const cardDatas = [
     Rating: "41 ratings",
     Hearts: LikeHeart,
     name: "Health mix  – 500 Gms",
-    price: 420,
-    oldPrice: 420,
+    price: 135,
+    oldPrice: 200,
   },
 ];
 

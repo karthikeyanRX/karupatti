@@ -17,16 +17,18 @@ import HealthBeniftAromaImage from "../features/image/HealthBeniftAromaImage.png
 import HealthBenifitAgeGroupImage from "../features/image/HealthBenifitAgeGroupImage.png";
 import HealthBenifitsLeavesImage from "../features/image/HealthBenifitsLeavesImage.png";
 import HealthBinifitLeafImage from "../features/image/HealthBinifitLeafImage.png";
+import styled from "@emotion/styled";
+import { theme } from "../commonCompond/theme";
 
-const theme = createTheme();
+// const theme = createTheme();
 
-theme.typography.h3 = {
-  fontWeight: "600px",
-  fontSize: "28px",
-  lineHeight: "44.07px",
-  marginBottom: "2rem",
-  marginTop: "3rem",
-};
+// theme.typography.h3 = {
+//   fontWeight: "600px",
+//   fontSize: "28px",
+//   lineHeight: "44.07px",
+//   marginBottom: "2rem",
+//   marginTop: "3rem",
+// };
 
 const items = [
   {
@@ -74,72 +76,77 @@ const ResponsiveAppBarPadding = {
   ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
   mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
 };
-
+const ResponsiveTypography = styled("div")(({ theme }) => ({
+  fontSize: "14px",
+  [theme.breakpoints?.down("sm")]: {
+    fontSize: "13px",
+  },
+}));
 function HealthBenefits() {
   return (
-    // <Grid container justifyContent="center" mt={2}>
-    //   <Grid item xs={9} md={8} lg={10} xl={12} sm={9.5}>
-    <Box
-      sx={ResponsiveAppBarPadding}
-      // sx={{
-      //   display: "flex",
-      //   justifyContent: "center",
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      // }}
-    >
-      <ThemeProvider theme={theme}>
-        <Typography variant="h3">Health benefits</Typography>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
       <Box
-        sx={{
-          gap: "20px",
-          display: "flex",
-          flexWrap: "wrap",
-          // justifyContent: "center",
-        }}
+        sx={ResponsiveAppBarPadding}
+        // sx={{
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   flexDirection: "column",
+        //   alignItems: "center",
+        // }}
       >
-        {items.map((item, index) => (
-          <Card
-            key={index}
-            variant="outlined"
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              // alignItems: "center",
-              borderRadius: "16px",
-              height: "70px",
-              width: "271px",
-              paddingX: "4px",
-              border: `1px solid ${item.borderColor}`,
-            }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Box sx={{ paddingLeft: "8px" }}>
-                <img src={item.image} alt={item.name} width={35} />
-              </Box>
-              <Box>
+        <Typography variant="h3" mt={6} fontWeight={600}>
+          Health benefits
+        </Typography>
+
+        <Box
+          mt={5}
+          sx={{
+            gap: "20px",
+            display: "flex",
+            flexWrap: "wrap",
+            // justifyContent: "center",
+          }}
+        >
+          {items.map((item, index) => (
+            <Card
+              key={index}
+              variant="outlined"
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                // alignItems: "center",
+                borderRadius: "16px",
+                height: "70px",
+                width: "271px",
+                paddingX: "4px",
+                border: `1px solid ${item.borderColor}`,
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Box sx={{ paddingLeft: "8px" }}>
+                  <img src={item.image} alt={item.name} width={35} />
+                </Box>
                 <Box>
-                  <CardContent display="flex" flexWrap="wrap" fontSize="12px">
-                    <Typography
-                      level="title-md"
-                      sx={{ fontWeight: "bold", fontSize: "14px" }}
-                    >
-                      {item.name}
-                    </Typography>
-                    <Typography sx={{ fontSize: "13px" }}>
-                      {item.price}
-                    </Typography>
-                  </CardContent>
+                  <Box>
+                    <CardContent display="flex" flexWrap="wrap" fontSize="12px">
+                      <ResponsiveTypography
+                        level="title-md"
+                        sx={{ fontWeight: "bold", fontSize: "14px" }}
+                      >
+                        {item.name}
+                      </ResponsiveTypography>
+                      <ResponsiveTypography sx={{ fontSize: "13px" }}>
+                        {item.price}
+                      </ResponsiveTypography>
+                    </CardContent>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </Box>
       </Box>
-    </Box>
-    //   </Grid>
-    // </Grid>
+    </ThemeProvider>
   );
 }
 

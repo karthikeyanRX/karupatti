@@ -7,20 +7,20 @@ import {
   CardContent,
   Grid,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import LikeHeart from "../features/image/LikeHeart.jpg";
 import OilView from "../ProductView/OilView";
 
 const BestSellerCards = (props) => {
+  // const isSmallScreen = useMediaQuery("(max-width:600px)");
   const handleCardClick = () => {
     props.handleShowAnotherComponent();
     console.log(props.handleShowAnotherComponent, "CLICKED");
   };
   return (
     <Box>
-      <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box
           sx={{
             display: "flex",
@@ -36,8 +36,8 @@ const BestSellerCards = (props) => {
               padding: "12px",
               display: "flex",
               flexDirection: "column",
-
               gap: "20px",
+              // width: isSmallScreen ? "80%" : "100%",
             }}
             onClick={handleCardClick}
           >

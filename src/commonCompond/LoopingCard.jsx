@@ -19,17 +19,17 @@ export default function LoopingCard(props) {
 
   const [cardData, setCardData] = useState(cardDatas);
 
-  const theme = createTheme();
-  theme.typography.h3 = {
-    // marginLeft: "13rem",
-    fontFamily: "'Poppins', sans-serif",
-    fontWeight: "600px",
-    fontSize: "28px",
-    VerticalTrim: "Cap height",
-    lineHeight: "44.07px",
-    marginBottom: "2rem",
-    marginTop: "2rem",
-  };
+  // const theme = createTheme();
+  // theme.typography.h3 = {
+  //   // marginLeft: "13rem",
+  //   fontFamily: "'Poppins', sans-serif",
+  //   fontWeight: "600px",
+  //   fontSize: "28px",
+  //   VerticalTrim: "Cap height",
+  //   lineHeight: "44.07px",
+  //   marginBottom: "2rem",
+  //   marginTop: "2rem",
+  // };
   useEffect(() => {
     if (props.checkValue !== "") {
       const filteredCards = cardDatas.filter((item) =>
@@ -51,34 +51,33 @@ export default function LoopingCard(props) {
     props.setShowAnotherComponent(true);
   };
   return (
-    <div>
-      <Box sx={responsiveCard}>
-        <Box>
-          <ThemeProvider theme={theme}>
-            <Typography variant="h3">Best Sellers</Typography>
-          </ThemeProvider>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            gap: "24px",
-            flexWrap: "wrap",
-            // justifyContent: "center",
-          }}
-        >
-          {cardData.map((item) => {
-            console.log(item, "item234");
-            return (
-              <Box key={item.id}>
-                <BestSellerCards
-                  card={item}
-                  handleShowAnotherComponent={handleShowAnotherComponent}
-                />
-              </Box>
-            );
-          })}
-        </Box>
+    <Box sx={responsiveCard}>
+      <Box>
+        <Typography variant="h5" mt={6} fontWeight={600}>
+          Best Sellers
+        </Typography>
       </Box>
-    </div>
+      <Box
+        mt={5}
+        sx={{
+          display: "flex",
+          gap: "24px",
+          flexWrap: "wrap",
+          // justifyContent: "center",
+        }}
+      >
+        {cardData.map((item) => {
+          console.log(item, "item234");
+          return (
+            <Box key={item.id}>
+              <BestSellerCards
+                card={item}
+                handleShowAnotherComponent={handleShowAnotherComponent}
+              />
+            </Box>
+          );
+        })}
+      </Box>
+    </Box>
   );
 }

@@ -17,12 +17,32 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import { useState } from "react";
 import karupattiNavImage from "../features/image/karupattiNavImage.png";
-import { FormControl, Grid, InputLabel, Select } from "@mui/material";
+// import { makeStyles } from "@mui/styles";
+
+import {
+  FormControl,
+  Grid,
+  InputLabel,
+  Select,
+  ThemeProvider,
+  makeStyles,
+} from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
+import styled from "@emotion/styled";
+import { theme } from "../commonCompond/theme";
+import { useMediaQuery } from "@mui/material";
 const pages = ["Home", "Karupatti", "Rice", "Cold pressed oil", "Health mix"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+const ResponsiveTypography = styled("div")(({ theme }) => ({
+  fontSize: "20px",
+  [theme.breakpoints?.down("lg")]: {
+    fontSize: "16px",
+  },
+}));
 function ResponsiveAppBar() {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+  // const classes = ResponsiveTypography();
   const [anchorElNav, setAnchorElNav] = useState();
   const [anchorElUser, setAnchorElUser] = useState();
 
@@ -53,76 +73,86 @@ function ResponsiveAppBar() {
     mr: { xs: 4, sm: 12, md: 8, lg: 19, xl: 19 },
   };
   return (
-    <Box sx={ResponsiveAppBarPadding}>
-      <AppBar
-        position="static"
-        sx={{
-          backgroundColor: "white",
-          width: "100%",
-          color: "black",
-          borderRadius: "10px",
-          marginTop: "20px",
-          // display: "flex",
-        }}
-      >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters sx={ResponsiveAppBar}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                display: { xs: "none", md: "flex" },
-              }}
-            >
-              <img
-                src={karupattiNavImage}
-                alt={karupattiNavImage}
-                width={"70%"}
-              />
-            </Typography>
+    // <Grid container mt={5} justifyContent={"center"}>
+    //   <Grid item xs={9} md={8} lg={10} xl={10} sm={9.5}>
+    <ThemeProvider theme={theme}>
+      <Box sx={ResponsiveAppBarPadding}>
+        <AppBar
+          position="static"
+          sx={{
+            backgroundColor: "white",
+            width: "100%",
+            color: "black",
+            borderRadius: "10px",
+            marginTop: "20px",
+            // display: "flex",
+          }}
+        >
+          <Container maxWidth="xl">
+            <Toolbar disableGutters sx={ResponsiveAppBar}>
+              {/* <AdbIcon /> */}
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  display: { xs: "none", md: "flex" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" sx={{ color: "black" }}>
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-            {/* <Typography
+                <img
+                  src={karupattiNavImage}
+                  alt={karupattiNavImage}
+                  width={"70%"}
+                />
+              </Typography>
+
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon
+                    sx={{ fontSize: isSmallScreen ? "small" : "large" }}
+                  />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {pages.map((page) => (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <ResponsiveTypography
+                        textAlign="center"
+                        sx={{ color: "black" }}
+                      >
+                        {page}
+                      </ResponsiveTypography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+              {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+              {/* <Typography
                 variant="h5"
                 noWrap
                 component="a"
@@ -144,48 +174,77 @@ function ResponsiveAppBar() {
                   width={"100p%"}
                 />
               </Typography> */}
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    color: page === "Home" ? "#2C9763" : "black",
-                    display: "flex",
-                    fontWeight: "400px",
-                    justifyContent: "start",
-                  }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
-
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
-              <InputLabel>English</InputLabel>
-              <Select
-                // labelId="demo-simple-select-standard-label"
-                // id="demo-simple-select-standard"
-                value={age}
-                onChange={handleChange}
-                // label="Age"
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", md: "flex" },
+                  gap: "20px",
+                  fontWeight: "600px",
+                }}
               >
-                <MenuItem>English</MenuItem>
-                <MenuItem>Tamil</MenuItem>
-              </Select>
-            </FormControl>
+                {pages.map((page) => (
+                  <ResponsiveTypography
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      color: page === "Home" ? "#2C9763" : "black",
+                      display: "flex",
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <SearchIcon />
-                  <FavoriteBorderIcon />
-                  <ShoppingCartOutlinedIcon />
-                  <PermIdentityOutlinedIcon />
-                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                </IconButton>
-              </Tooltip>
-              {/* <Menu
+                      // justifyContent: "start",
+                      // gap: "20px",
+                    }}
+                  >
+                    {page}
+                  </ResponsiveTypography>
+                ))}
+              </Box>
+
+              <Box mb={1}>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
+                  <InputLabel
+                    sx={{
+                      minWidth: isSmallScreen ? 120 : 200,
+                      fontSize: "14px",
+                    }}
+                  >
+                    English
+                    {/* {isSmallScreen ? "Small Button" : "Large Button"} */}
+                  </InputLabel>
+                  <Select
+                    // labelId="demo-simple-select-standard-label"
+                    // id="demo-simple-select-standard"
+                    value={age}
+                    onChange={handleChange}
+                    // label="Age"
+                  >
+                    <MenuItem>English</MenuItem>
+                    <MenuItem>Tamil</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    {/* <SearchIcon /> */}
+                    <SearchIcon
+                      sx={{ fontSize: isSmallScreen ? "small" : "large" }}
+                    />
+                    <FavoriteBorderIcon
+                      sx={{ fontSize: isSmallScreen ? "small" : "large" }}
+                    />
+                    <ShoppingCartOutlinedIcon
+                      sx={{ fontSize: isSmallScreen ? "small" : "large" }}
+                    />
+                    <PermIdentityOutlinedIcon
+                      sx={{ fontSize: isSmallScreen ? "small" : "large" }}
+                    />
+                    {/* <FavoriteBorderIcon />
+                    <ShoppingCartOutlinedIcon />
+                    <PermIdentityOutlinedIcon /> */}
+                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                  </IconButton>
+                </Tooltip>
+                {/* <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -207,11 +266,12 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu> */}
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Box>
+    </ThemeProvider>
     //   </Grid>
     // </Grid>
   );
