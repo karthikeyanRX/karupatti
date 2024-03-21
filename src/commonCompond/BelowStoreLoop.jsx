@@ -6,7 +6,13 @@ import BestSellerCards from "../features/BestSallerCards";
 const BelowStoreLoop = () => {
   return (
     <Box>
-      <Typography variant="h5" mt={6} fontWeight={600}>
+      <Typography
+        style={{
+          marginTop: "4rem",
+          fontSize: "clamp(1rem, 2vw, 1.5rem)",
+          fontWeight: "bold",
+        }}
+      >
         Below 100 store
       </Typography>
 

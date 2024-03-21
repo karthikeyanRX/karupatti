@@ -23,7 +23,7 @@ const MainPage = () => {
     // <>
     //  {!showAnotherComponent ? (
     <>
-      <Box p={2} sx={{ margin: "0 20px" }}>
+      <Box marginX={{ sm: 10, md: 8, lg: 10, xl: 8, xs: 1 }}>
         {/* <Aside /> */}
         <Appbar />
         <CategoryCards setCheckValue={setCheckValue} />

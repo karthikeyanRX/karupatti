@@ -86,7 +86,14 @@ function HealthBenefits() {
   return (
     // <ThemeProvider theme={theme}>
     <Box>
-      <Typography variant="h3" mt={6} fontWeight={600}>
+      <Typography
+        // variant="h3"
+        style={{
+          marginTop: "4rem",
+          fontSize: "clamp(1rem, 2vw, 1.5rem)",
+          fontWeight: "bold",
+        }}
+      >
         Health benefits
       </Typography>
       <Grid container spacing={2} mt={2}>

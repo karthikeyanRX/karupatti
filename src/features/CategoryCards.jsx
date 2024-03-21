@@ -45,27 +45,6 @@ const items = [
     icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
     borderColor: "#2C9763",
   },
-  {
-    name: "Health mix",
-    price: "Starts from ₹135",
-    image: healthmixmini,
-    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
-    borderColor: "#2C9763",
-  },
-  {
-    name: "Health mix",
-    price: "Starts from ₹135",
-    image: healthmixmini,
-    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
-    borderColor: "#2C9763",
-  },
-  {
-    name: "Health mix",
-    price: "Starts from ₹135",
-    image: healthmixmini,
-    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
-    borderColor: "#2C9763",
-  },
 ];
 
 function CategoryCards(props) {
@@ -79,7 +58,13 @@ function CategoryCards(props) {
   return (
     // <ThemeProvider theme={theme}>
     <Box>
-      <Typography variant="h3" mt={4}>
+      <Typography
+        style={{
+          marginTop: "4rem",
+          fontSize: "clamp(1rem, 2vw, 1.5rem)",
+          fontWeight: "bold",
+        }}
+      >
         Shop by category
       </Typography>
 
