@@ -220,6 +220,28 @@ export const coldPressedOillDatas = [
     price: 240,
     oldPrice: 300,
   },
+  {
+    DiscountNewImage: DiscountOil,
+    LeafImage: LeafImage,
+    karupattiLargeImage: groungnutoilNaturalpage,
+    RateingKarupatti: RateingKarupatti,
+    Hearts: LikeHeart,
+    Rating: "9 ratings",
+    name: "Gingelly oil – 250 Ml",
+    price: 80,
+    oldPrice: 90,
+  },
+  {
+    // DiscountNewImage: DiscountOil,
+    LeafImage: LeafImage,
+    karupattiLargeImage: gingellyoilNatiral,
+    RateingKarupatti: RateingKarupatti,
+    Rating: "3 ratings",
+    Hearts: LikeHeart,
+    name: "Cold Pressed Groundnut Oil – 1L",
+    price: 240,
+    oldPrice: 300,
+  },
 ];
 
 export const SuggestedProductsData = [

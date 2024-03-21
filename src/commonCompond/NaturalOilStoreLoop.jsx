@@ -1,51 +1,29 @@
-import { Box, ThemeProvider, Typography, createTheme } from "@mui/material";
+import {
+  Box,
+  Grid,
+  ThemeProvider,
+  Typography,
+  createTheme,
+} from "@mui/material";
 import React from "react";
 import { naturalOilDatas } from "./CardDatas";
 import BestSellerCards from "../features/BestSallerCards";
 
 const NaturalOilStoreLoop = () => {
-  // const theme = createTheme();
-  // theme.typography.h3 = {
-  //   // marginLeft: "13rem",
-  //   fontFamily: "'Poppins', sans-serif",
-  //   fontWeight: "600px",
-  //   fontSize: "28px",
-  //   VerticalTrim: "Cap height",
-  //   lineHeight: "44.07px",
-  //   marginBottom: "2rem",
-  //   marginTop: "2rem",
-  // };
-  const ResponsiveAppBarPadding = {
-    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
-  };
   return (
-    <Box sx={ResponsiveAppBarPadding}>
-      <Box>
-        <Typography variant="h5" mt={6} fontWeight={600}>
-          Natural oil store
-        </Typography>
-      </Box>
-      <Box
-        mt={5}
-        sx={{
-          display: "flex",
-          // justifyContent: "center",
-          gap: "24px",
-          flexWrap: "wrap",
-          cursor: "pointer",
-          // justifyContent: "cener",t
-        }}
-      >
+    <Box>
+      <Typography variant="h5" mt={6} fontWeight={600}>
+        Natural oil store
+      </Typography>
+      <Grid spacing={2} container mt={2}>
         {naturalOilDatas.map((item) => {
-          console.log(item, "item ");
           return (
-            <Box>
+            <Grid item xs={12} md={4} lg={3} sm={6}>
               <BestSellerCards card={item} />
-            </Box>
+            </Grid>
           );
         })}
-      </Box>
+      </Grid>
     </Box>
   );
 };

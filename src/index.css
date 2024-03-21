@@ -1,19 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
-
 body {
   margin: 0;
-  font-family: "Saira Condensed", sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: radial-gradient(circle at center, #2c9763 10%, #2c9763 0%); */
-  background-color: rgb(234, 241, 234);
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; */
+  background: radial-gradient(rgb(213, 233, 213) 20%, white);
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
+.css-46bh2p-MuiCardContent-root {
+  padding: 0%;
+}
+.css-46bh2p-MuiCardContent-root:last-child {
+  padding-bottom: 0px;
+}

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@keyframes rotate50 {
+/* @keyframes rotate50 {
   0% {
     transform: rotate(-50deg);
   }
@@ -9,8 +8,8 @@
   100% {
     transform: rotate(-50deg);
   }
-}
-
+} */
+/* 
 .handimage {
   display: flex;
   justify-content: center;
@@ -50,65 +49,65 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-}
+} */
 
-.icon1 {
-  /* animation: rotate50 13s infinite; */
-  height: 60px;
-  width: 60px;
-  /* margin-right: 270px;
+/* .icon1 { */
+/* animation: rotate50 13s infinite; */
+/* height: 60px;
+  width: 60px; */
+/* margin-right: 270px;
   margin-top: 330px;
   position: absolute; */
-  transition-duration: 600ms;
+/* transition-duration: 600ms;
   transition-timing-function: ease;
   cursor: pointer;
-}
-.icon2 {
-  /* animation: rotate50 13s infinite; */
-  height: 60px;
-  width: 60px;
-  /* margin-right: 180px;
+} */
+/* .icon2 { */
+/* animation: rotate50 13s infinite; */
+/* height: 60px;
+  width: 60px; */
+/* margin-right: 180px;
   margin-top: 120px;
   position: absolute; */
-  transition-duration: 600ms;
+/* transition-duration: 600ms;
   transition-timing-function: ease;
   cursor: pointer;
-}
-.icon3 {
-  /* animation: rotate50 13s infinite; */
-  height: 60px;
-  width: 60px;
-  /* margin-right: 0x;
+} */
+/* .icon3 { */
+/* animation: rotate50 13s infinite; */
+/* height: 60px;
+  width: 60px; */
+/* margin-right: 0x;
   margin-top: 30px;
   position: absolute; */
-  transition-duration: 600ms;
+/* transition-duration: 600ms;
   transition-timing-function: ease;
   cursor: pointer;
-}
-.icon4 {
-  /* animation: rotate50 13s infinite; */
-  height: 60px;
-  width: 60px;
-  /* margin-left: 170px;
+} */
+/* .icon4 { */
+/* animation: rotate50 13s infinite; */
+/* height: 60px;
+  width: 60px; */
+/* margin-left: 170px;
   margin-top: 81px;
   position: absolute; */
-  transition-duration: 600ms;
+/* transition-duration: 600ms;
   transition-timing-function: ease;
   cursor: pointer;
-}
-.icon5 {
-  /* animation: rotate50 13s infinite; */
-  height: 60px;
-  width: 60px;
-  /* margin-left: 290px;
+} */
+/* .icon5 { */
+/* animation: rotate50 13s infinite; */
+/* height: 60px;
+  width: 60px; */
+/* margin-left: 290px;
   margin-top: 215px;
   position: absolute; */
-  transition-duration: 600ms;
+/* transition-duration: 600ms;
   transition-timing-function: ease;
   cursor: pointer;
-}
+} */
 
-.icon1:hover {
+/* .icon1:hover {
   transform: scale(1.5);
 }
 .icon2:hover {
@@ -131,4 +130,9 @@
 }
 .css-ndaqpv-MuiTypography-root {
   font-family: "Saira Condensed", sans-serif;
+} */
+
+.card-content {
+  padding: 0%;
+  padding-bottom: 0%;
 }

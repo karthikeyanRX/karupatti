@@ -1,35 +1,12 @@
 import { useEffect, useState } from "react";
 import BestSellerCards from "../features/BestSallerCards";
-import {
-  belowStoreDatas,
-  cardDatas,
-  coldPressedOillDatas,
-  naturalOilDatas,
-} from "./CardDatas";
-import {
-  Box,
-  ThemeProvider,
-  Typography,
-  createTheme,
-  responsiveFontSizes,
-} from "@mui/material";
+import { cardDatas } from "./CardDatas";
+import { Box, Grid, Typography } from "@mui/material";
 
 export default function LoopingCard(props) {
   console.log(props.checkValue, "props.checkValue");
 
   const [cardData, setCardData] = useState(cardDatas);
-
-  // const theme = createTheme();
-  // theme.typography.h3 = {
-  //   // marginLeft: "13rem",
-  //   fontFamily: "'Poppins', sans-serif",
-  //   fontWeight: "600px",
-  //   fontSize: "28px",
-  //   VerticalTrim: "Cap height",
-  //   lineHeight: "44.07px",
-  //   marginBottom: "2rem",
-  //   marginTop: "2rem",
-  // };
   useEffect(() => {
     if (props.checkValue !== "") {
       const filteredCards = cardDatas.filter((item) =>
@@ -43,41 +20,27 @@ export default function LoopingCard(props) {
     }
   }, [props.checkValue]);
 
-  const responsiveCard = {
-    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-    mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
-  };
   const handleShowAnotherComponent = () => {
     props.setShowAnotherComponent(true);
   };
   return (
-    <Box sx={responsiveCard}>
-      <Box>
-        <Typography variant="h5" mt={6} fontWeight={600}>
-          Best Sellers
-        </Typography>
-      </Box>
-      <Box
-        mt={5}
-        sx={{
-          display: "flex",
-          gap: "24px",
-          flexWrap: "wrap",
-          cursor: "pointer",
-        }}
-      >
+    <Box>
+      <Typography variant="h5" mt={6} fontWeight={600}>
+        Best Sellers
+      </Typography>
+
+      <Grid spacing={2} container mt={2}>
         {cardData.map((item) => {
-          console.log(item, "item234");
           return (
-            <Box key={item.id}>
+            <Grid item xs={12} md={4} lg={3} sm={6}>
               <BestSellerCards
                 card={item}
                 handleShowAnotherComponent={handleShowAnotherComponent}
               />
-            </Box>
+            </Grid>
           );
         })}
-      </Box>
+      </Grid>
     </Box>
   );
 }

@@ -6,18 +6,14 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import { useState } from "react";
 import karupattiNavImage from "../features/image/karupattiNavImage.png";
-// import { makeStyles } from "@mui/styles";
 
 import {
   FormControl,
@@ -35,9 +31,9 @@ const pages = ["Home", "Karupatti", "Rice", "Cold pressed oil", "Health mix"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveTypography = styled("div")(({ theme }) => ({
-  fontSize: "20px",
+  fontSize: "14px",
   [theme.breakpoints?.down("lg")]: {
-    fontSize: "16px",
+    fontSize: "12px",
   },
 }));
 function ResponsiveAppBar() {
@@ -65,18 +61,13 @@ function ResponsiveAppBar() {
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
-  const ResponsiveAppBar = {
-    flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 20px)" },
-  };
-  const ResponsiveAppBarPadding = {
-    ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-    mr: { xs: 4, sm: 12, md: 8, lg: 19, xl: 19 },
-  };
+  // const ResponsiveAppBar = {
+  //   flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 20px)" },
+  // };
+
   return (
-    // <Grid container mt={5} justifyContent={"center"}>
-    //   <Grid item xs={9} md={8} lg={10} xl={10} sm={9.5}>
     <ThemeProvider theme={theme}>
-      <Box sx={ResponsiveAppBarPadding}>
+      <Box>
         <AppBar
           position="static"
           sx={{
@@ -85,13 +76,10 @@ function ResponsiveAppBar() {
             color: "black",
             borderRadius: "10px",
             marginTop: "20px",
-            // display: "flex",
           }}
         >
           <Container maxWidth="xl">
-            <Toolbar disableGutters sx={ResponsiveAppBar}>
-              {/* <AdbIcon /> */}
-
+            <Toolbar disableGutters>
               <Typography
                 variant="h6"
                 noWrap
@@ -151,29 +139,6 @@ function ResponsiveAppBar() {
                   ))}
                 </Menu>
               </Box>
-              {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-              {/* <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  flexGrow: 1,
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
-              >
-                <img
-                  src={karupattiNavImage}
-                  alt={karupattiNavImage}
-                  width={"100p%"}
-                />
-              </Typography> */}
               <Box
                 sx={{
                   flexGrow: 1,
@@ -189,9 +154,6 @@ function ResponsiveAppBar() {
                     sx={{
                       color: page === "Home" ? "#2C9763" : "black",
                       display: "flex",
-
-                      // justifyContent: "start",
-                      // gap: "20px",
                     }}
                   >
                     {page}
@@ -200,7 +162,7 @@ function ResponsiveAppBar() {
               </Box>
 
               <Box mb={1}>
-                <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
+                {/* <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
                   <InputLabel
                     sx={{
                       minWidth: isSmallScreen ? 120 : 200,
@@ -208,19 +170,12 @@ function ResponsiveAppBar() {
                     }}
                   >
                     English
-                    {/* {isSmallScreen ? "Small Button" : "Large Button"} */}
                   </InputLabel>
-                  <Select
-                    // labelId="demo-simple-select-standard-label"
-                    // id="demo-simple-select-standard"
-                    value={age}
-                    onChange={handleChange}
-                    // label="Age"
-                  >
+                  <Select value={age} onChange={handleChange}>
                     <MenuItem>English</MenuItem>
                     <MenuItem>Tamil</MenuItem>
                   </Select>
-                </FormControl>
+                </FormControl> */}
               </Box>
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip>
@@ -238,42 +193,14 @@ function ResponsiveAppBar() {
                     <PermIdentityOutlinedIcon
                       sx={{ fontSize: isSmallScreen ? "small" : "large" }}
                     />
-                    {/* <FavoriteBorderIcon />
-                    <ShoppingCartOutlinedIcon />
-                    <PermIdentityOutlinedIcon /> */}
-                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                   </IconButton>
                 </Tooltip>
-                {/* <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
               </Box>
             </Toolbar>
           </Container>
         </AppBar>
       </Box>
     </ThemeProvider>
-    //   </Grid>
-    // </Grid>
   );
 }
 export default ResponsiveAppBar;

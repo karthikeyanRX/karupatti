@@ -23,35 +23,26 @@ const MainPage = () => {
     // <>
     //  {!showAnotherComponent ? (
     <>
-      <Box>
-        <Box
-          sx={
-            {
-              // cursor: "pointer",
-            }
-          }
-        >
-          <Aside />
-          <Appbar />
-          <CategoryCards setCheckValue={setCheckValue} />
-          <LoopingCard
-            checkValue={checkValue}
-            setShowAnotherComponent={setShowAnotherComponent}
-          />
-          <HealthBenefits />
-          <NaturalOilStoreLoop />
-          <AboutsUs />
-          <BelowStoreLoop />
-          <ColdPressedOilLoop />
-          <SuggestedProductsLoop />
-        </Box>
-        <Footer />
+      <Box p={2} sx={{ margin: "0 20px" }}>
+        {/* <Aside /> */}
+        <Appbar />
+        <CategoryCards setCheckValue={setCheckValue} />
+        <LoopingCard
+          checkValue={checkValue}
+          setShowAnotherComponent={setShowAnotherComponent}
+        />
+        <HealthBenefits />
+        <NaturalOilStoreLoop />
+        {/* <AboutsUs /> */}
+        <BelowStoreLoop />
+        <ColdPressedOilLoop />
+        <SuggestedProductsLoop />
       </Box>
+      <Footer />
+
       {/* // ) : ( */}
       {/* //   <OilviewLooping showAnotherComponent={showAnotherComponent} /> */}
       {/* // )} */}
-
-      {/* // </> */}
 
       {/* <OilviewLooping /> */}
     </>

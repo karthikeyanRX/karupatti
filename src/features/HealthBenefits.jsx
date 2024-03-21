@@ -72,10 +72,10 @@ const items = [
     image: HealthBinifitLeafImage,
   },
 ];
-const ResponsiveAppBarPadding = {
-  ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-  mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
-};
+// const ResponsiveAppBarPadding = {
+//   ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
+//   mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
+// };
 const ResponsiveTypography = styled("div")(({ theme }) => ({
   fontSize: "14px",
   [theme.breakpoints?.down("sm")]: {
@@ -84,70 +84,57 @@ const ResponsiveTypography = styled("div")(({ theme }) => ({
 }));
 function HealthBenefits() {
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        sx={ResponsiveAppBarPadding}
-        // sx={{
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        // }}
-      >
-        <Typography variant="h3" mt={6} fontWeight={600}>
-          Health benefits
-        </Typography>
-
-        <Box
-          mt={5}
-          sx={{
-            gap: "20px",
-            display: "flex",
-            flexWrap: "wrap",
-            cursor: "pointer",
-            // justifyContent: "center",
-          }}
-        >
-          {items.map((item, index) => (
+    // <ThemeProvider theme={theme}>
+    <Box>
+      <Typography variant="h3" mt={6} fontWeight={600}>
+        Health benefits
+      </Typography>
+      <Grid container spacing={2} mt={2}>
+        {items.map((item, index) => (
+          <Grid
+            item
+            xs={12}
+            md={4}
+            lg={3}
+            sm={6}
+            key={index}
+            variant="outlined"
+            cursor="pointer"
+          >
             <Card
-              key={index}
-              variant="outlined"
               sx={{
+                borderRadius: "20px",
+                // padding: "2px",
                 display: "flex",
-                flexWrap: "wrap",
-                // alignItems: "center",
-                borderRadius: "16px",
-                height: "70px",
-                width: "271px",
-                paddingX: "4px",
-                border: `1px solid ${item.borderColor}`,
+                justifyContent: "space-evenly",
+                alignItems: "center",
+                gap: "20px",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Box sx={{ paddingLeft: "8px" }}>
-                  <img src={item.image} alt={item.name} width={35} />
-                </Box>
+              <Box sx={{ paddingLeft: "8px" }}>
+                <img src={item.image} alt={item.name} width={35} />
+              </Box>
+              <Box>
                 <Box>
-                  <Box>
-                    <CardContent display="flex" flexWrap="wrap" fontSize="12px">
-                      <ResponsiveTypography
-                        level="title-md"
-                        sx={{ fontWeight: "bold", fontSize: "14px" }}
-                      >
-                        {item.name}
-                      </ResponsiveTypography>
-                      <ResponsiveTypography sx={{ fontSize: "13px" }}>
-                        {item.price}
-                      </ResponsiveTypography>
-                    </CardContent>
-                  </Box>
+                  <CardContent display="flex" flexWrap="wrap" fontSize="12px">
+                    <ResponsiveTypography
+                      level="title-md"
+                      sx={{ fontWeight: "bold", fontSize: "14px" }}
+                    >
+                      {item.name}
+                    </ResponsiveTypography>
+                    <ResponsiveTypography sx={{ fontSize: "13px" }}>
+                      {item.price}
+                    </ResponsiveTypography>
+                  </CardContent>
                 </Box>
               </Box>
             </Card>
-          ))}
-        </Box>
-      </Box>
-    </ThemeProvider>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+    // </ThemeProvider>
   );
 }
 

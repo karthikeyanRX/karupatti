@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  createTheme,
-  ThemeProviderider,
-
-  // ThemeProvider,
-} from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Karupattimini from "../features/image/Karupattimini.png";
 import Rice1 from "../features/image/Rice1.png";
@@ -18,23 +9,12 @@ import styled from "@emotion/styled";
 import { theme } from "../commonCompond/theme";
 import { ThemeProvider } from "@emotion/react";
 
-const ResponsiveTypography = styled("div")(({ theme }) => ({
-  fontSize: "14px",
-  [theme.breakpoints?.down("sm")]: {
-    fontSize: "13px",
-  },
-}));
-// const theme = createTheme();
-
-// theme.typography.h3 = {
-//   fontFamily: "'Poppins', sans-serif",
-//   fontWeight: "600px",
-//   fontSize: "28px",
-//   VerticalTrim: "Cap height",
-//   lineHeight: "44.07px",
-//   marginBottom: "2rem",
-//   marginTop: "3rem",
-// };
+// const ResponsiveTypography = styled("div")(({ theme }) => ({
+//   fontSize: "14px",
+//   [theme.breakpoints?.down("sm")]: {
+//     // fontSize: "9px",
+//   },
+// }));
 
 const items = [
   {
@@ -65,6 +45,27 @@ const items = [
     icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
     borderColor: "#2C9763",
   },
+  {
+    name: "Health mix",
+    price: "Starts from ₹135",
+    image: healthmixmini,
+    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
+    borderColor: "#2C9763",
+  },
+  {
+    name: "Health mix",
+    price: "Starts from ₹135",
+    image: healthmixmini,
+    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
+    borderColor: "#2C9763",
+  },
+  {
+    name: "Health mix",
+    price: "Starts from ₹135",
+    image: healthmixmini,
+    icon: <ArrowCircleRightIcon sx={{ color: "#2C9763" }} />,
+    borderColor: "#2C9763",
+  },
 ];
 
 function CategoryCards(props) {
@@ -75,91 +76,60 @@ function CategoryCards(props) {
     props.setCheckValue(item.name);
   };
 
-  const cardContainerStyle = {
-    flex: { xs: "100%", sm: "calc(50% - 20px)", md: "calc(33% - 10px)" },
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          ml: { xs: 7, sm: 12, md: 8, lg: 12, xl: 22 },
-          mr: { xs: 3, sm: 5, md: 8, lg: 19, xl: 19 },
-        }}
-      >
-        <Typography variant="h3" mt={6}>
-          Shop by category
-        </Typography>
+    // <ThemeProvider theme={theme}>
+    <Box>
+      <Typography variant="h3" mt={4}>
+        Shop by category
+      </Typography>
 
-        <Box sx={cardContainerStyle}>
-          <Box
-            mt={5}
-            sx={{
-              borderRadius: "10px",
-              gap: "20px",
-              display: "flex",
-              flexWrap: "wrap",
-            }}
+      <Grid container spacing={2} mt={2}>
+        {items.map((item, index) => (
+          <Grid
+            item
+            xs={12}
+            md={4}
+            lg={3}
+            sm={6}
+            key={index}
+            variant="outlined"
+            cursor="pointer"
+            onClick={() => handleCardClick(item)}
           >
-            {items.map((item, index) => (
-              <Card
-                key={index}
-                variant="outlined"
-                cursor="pointer"
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "center",
-                  height: "65px",
-                  width: "269px",
-                  borderRadius: "16px",
-                  paddingRight: "10px",
-                  paddingBottom: "5px",
-                  border: `1px solid ${item.borderColor}`,
-                  backgroundColor: "white",
-                  cursor: "pointer",
-                  backgroundColor:
-                    item.name === selectedItem ? "#F0F0F0" : "inherit",
-                }}
-                onClick={() => handleCardClick(item)}
-              >
-                <Box
-                  sx={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <img src={item.image} alt={item.name} width={"50px"} />
-                </Box>
-                <Box sx={{ display: "flex", gap: "36px" }}>
-                  <Box>
-                    <CardContent fontSize={"12px"}>
-                      <ResponsiveTypography
-                        level="title-md"
-                        sx={{ fontWeight: "bold", fontSize: "14px" }}
-                      >
-                        {item.name}
-                      </ResponsiveTypography>
-                      <ResponsiveTypography sx={{ fontSize: "13px" }}>
-                        {item.price}
-                      </ResponsiveTypography>
-                    </CardContent>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
-                </Box>
-              </Card>
-            ))}
-          </Box>
-        </Box>
-      </Box>
-    </ThemeProvider>
+            <Card
+              sx={{
+                borderRadius: "20px",
+                // padding: "12p
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+                gap: "20px",
+                border: `1px solid ${item.borderColor}`,
+              }}
+              onClick={handleCardClick}
+            >
+              <Box width={"20%"}>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  style={{ maxWidth: "100%" }}
+                />
+              </Box>
+
+              <Box>
+                <Typography sx={{ fontWeight: "bold", fontSize: "14px" }}>
+                  {item.name}
+                </Typography>
+                <Typography sx={{ fontSize: "13px" }}>{item.price}</Typography>
+              </Box>
+
+              <Box>{item.icon}</Box>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+    // </ThemeProvider>
   );
 }
 
