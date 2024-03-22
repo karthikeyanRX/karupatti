@@ -26,8 +26,8 @@ const BestSellerCards = (props) => {
     >
       <Card
         sx={{
-          // height: "337px",
-          // width: "254px",
+          //height: "400px",
+          // width: "280px",
           borderRadius: "20px",
           padding: "12px",
           display: "flex",
@@ -74,7 +74,7 @@ const BestSellerCards = (props) => {
             <img
               src={props?.card?.karupattiLargeImage}
               alt={props?.card?.karupattiLargeImage}
-              width={130}
+              // width={130}
               height={130}
             />
           </Box>
@@ -116,19 +116,27 @@ const BestSellerCards = (props) => {
             </Box>
           </Box>
         </CardContent>
-        <Box sx={{ display: "flex", gap: "10px", marginTop: "3px" }}>
-          <Box>
-            <img src={LikeHeart} alt={LikeHeart} width={40} />
+        <Box
+          sx={{
+            display: "flex",
+            // alignItems: "center",
+            // justifyContent: "space-around",
+            gap: "10px",
+          }}
+        >
+          <Box marginTop={"10px"}>
+            <img src={LikeHeart} alt={LikeHeart} width={40} height={40} />
           </Box>
           <CardActions sx={{ padding: "0px" }}>
             <Button
+              style={{ padding: "6px 50px" }}
               variant="contained"
               sx={{
                 background: "#2C9763",
-                width: "197px",
-                height: "42px",
+                // padding: `7px 50px`,
                 borderRadius: "8px",
                 fontWeight: "600",
+                // width: "14rem",
                 size: "20px",
                 "&:hover": {
                   background: "#2C9763",

@@ -23,7 +23,20 @@ const MainPage = () => {
     // <>
     //  {!showAnotherComponent ? (
     <>
-      <Box marginX={{ sm: 10, md: 8, lg: 10, xl: 8, xs: 1 }}>
+      <Box
+        className={"surfaceDuo"}
+        // sx={{ margin: "0 8rem" }}
+        //marginX={{ sm: 2, md: 2, lg: 12, xxl: 15, xs: 4 }}
+        // sx={{
+        //   bgcolor: {
+        //     sm: "red",
+        //     md: "yellow",
+        //     lg: "green",
+        //     xl: "blue",
+        //     xs: "orange",
+        //   },
+        // }}
+      >
         {/* <Aside /> */}
         <Appbar />
         <CategoryCards setCheckValue={setCheckValue} />

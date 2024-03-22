@@ -136,3 +136,112 @@
   padding: 0%;
   padding-bottom: 0%;
 }
+
+@media screen and (min-width: 540px) and (max-width: 600px) {
+  /* Your styles specific to Surface Duo's dual-screen landscape mode */
+  .surfaceDuo {
+    padding: 40px;
+  }
+}
+
+/* @media screen and (min-width: 1282px) and (max-width: 1492px) {
+  
+  .surfaceDuo {
+    padding: 60px;
+  }
+}
+
+@media screen and (min-width: 949px) and (max-width: 1025px) {
+  
+  .surfaceDuo {
+    padding: 70px;
+  }
+} */
+
+/* @media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .surfaceDuo {
+    background-color: "red";
+    margin-inline: 20rem; 
+  }
+} */
+
+@media screen and (min-width: 1481px) and (max-width: 1600px) {
+  .surfaceDuo {
+    margin-left: 8rem;
+    margin-right: 8rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+@media screen and (min-width: 1400px) and (max-width: 1481px) {
+  /* 1489 */
+  .surfaceDuo {
+    margin-left: 5rem;
+    margin-right: 5rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+@media screen and (min-width: 1601px) and (max-width: 1700px) {
+  .surfaceDuo {
+    margin-left: 10rem;
+    margin-right: 10rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+@media screen and (min-width: 1701px) and (max-width: 1800px) {
+  .surfaceDuo {
+    margin-left: 12rem;
+    margin-right: 12rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2100px) {
+  .surfaceDuo {
+    margin-left: 20rem;
+    margin-right: 20rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .surfaceDuo {
+    margin-left: 1rem;
+    margin-right: 1rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1399px) {
+  .surfaceDuo {
+    margin-left: 4rem;
+    margin-right: 4rem; /* margin for xl screen between 1400px and 1550px */
+  }
+}
+
+/* @media screen and (min-width: 1048px) and (max-width: 1199px) {
+  .surfaceDuo {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+@media screen and (min-width: 996px) and (max-width: 1047px) {
+  .surfaceDuo {
+    margin-left: 4rem;
+    margin-right: 4rem; 
+  }
+}
+
+@media screen and (min-width: 920px) and (max-width: 995px) {
+  .surfaceDuo {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 920px) {
+  .surfaceDuo {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 821px) and (max-width: 899px) {
+  .surfaceDuo {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+}   */
