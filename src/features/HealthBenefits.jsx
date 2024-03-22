@@ -87,7 +87,6 @@ function HealthBenefits() {
     // <ThemeProvider theme={theme}>
     <Box>
       <Typography
-        // variant="h3"
         style={{
           marginTop: "4rem",
           fontSize: "clamp(1rem, 2vw, 1.5rem)",
@@ -108,35 +107,37 @@ function HealthBenefits() {
             variant="outlined"
             cursor="pointer"
           >
-            <Card
+            <Grid
               sx={{
                 borderRadius: "20px",
-                // padding: "2px",
                 display: "flex",
-                justifyContent: "space-evenly",
                 alignItems: "center",
-                gap: "20px",
+                background: "#ffff",
               }}
             >
-              <Box sx={{ paddingLeft: "8px" }}>
-                <img src={item.image} alt={item.name} width={35} />
-              </Box>
-              <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  padding: "20px",
+                  gap: "20px",
+                }}
+              >
                 <Box>
-                  <CardContent display="flex" flexWrap="wrap" fontSize="12px">
+                  <img src={item.image} alt={item.name} width={35} />
+                </Box>
+                <Box>
+                  <Box>
                     <ResponsiveTypography
                       level="title-md"
-                      sx={{ fontWeight: "bold", fontSize: "14px" }}
+                      sx={{ fontWeight: "bold" }}
                     >
                       {item.name}
                     </ResponsiveTypography>
-                    <ResponsiveTypography sx={{ fontSize: "13px" }}>
-                      {item.price}
-                    </ResponsiveTypography>
-                  </CardContent>
+                    <ResponsiveTypography>{item.price}</ResponsiveTypography>
+                  </Box>
                 </Box>
               </Box>
-            </Card>
+            </Grid>
           </Grid>
         ))}
       </Grid>

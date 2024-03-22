@@ -119,8 +119,8 @@ const BestSellerCards = (props) => {
         <Box
           sx={{
             display: "flex",
-            // alignItems: "center",
-            // justifyContent: "space-around",
+            alignItems: "center",
+            justifyContent: "space-around",
             gap: "10px",
           }}
         >
@@ -129,11 +129,12 @@ const BestSellerCards = (props) => {
           </Box>
           <CardActions sx={{ padding: "0px" }}>
             <Button
-              style={{ padding: "6px 50px" }}
+              className="button"
+              // style={{ padding: "6px 50px" }}
               variant="contained"
               sx={{
                 background: "#2C9763",
-                // padding: `7px 50px`,
+                padding: `6px 50px`,
                 borderRadius: "8px",
                 fontWeight: "600",
                 // width: "14rem",
@@ -141,6 +142,11 @@ const BestSellerCards = (props) => {
                 "&:hover": {
                   background: "#2C9763",
                 },
+                "@media screen and (max-width: 403px)": {
+                  padding: "6px 45px", // Adjusted padding for smaller screens
+                },
+                // paddingY: "6px",
+                // paddingX: "50px",
               }}
             >
               Add to cart

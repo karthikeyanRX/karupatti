@@ -26,7 +26,7 @@ const MainPage = () => {
       <Box
         className={"surfaceDuo"}
         // sx={{ margin: "0 8rem" }}
-        //marginX={{ sm: 2, md: 2, lg: 12, xxl: 15, xs: 4 }}
+        // marginX={{ xs: 0.2 }}
         // sx={{
         //   bgcolor: {
         //     sm: "red",
